@@ -3,10 +3,11 @@ import Providers from "next-auth/providers";
 
 export default NextAuth({
   providers: [
-    // Sign in with passwordless email link
-    Providers.Email({
-      server: "mailserver.com",
-      from: "<no-reply@example.com>",
+    Providers.Google({
+      clientId: "clientId123",
+      clientSecret: "clientSecret123",
     }),
   ],
+  // SQL or MongoDB database (or leave empty)
+  database: `postgres://postgres:password@localhost:5432/customdb`,
 });
